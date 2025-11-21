@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Abdulmuiz Shittu — Smart Vision Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#07060a;
+      --card:#0f1115;
+      --muted:#9aa4b2;
+      --accent:#00e6ff;
+      --accent-2:#7c5cff;
+      --glass: rgba(255,255,255,0.03);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,'Helvetica Neue',Arial;color:#e6eef6;background:linear-gradient(180deg,#050407 0%, #0b0b10 100%)}
+    header{position:fixed;left:0;right:0;top:0;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,0.03);z-index:40}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:#041018;font-weight:800}
+    .name{font-weight:700;letter-spacing:0.6px}
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600}
+    nav a:hover{color:var(--accent)}
+
+    main{padding-top:96px}
+    .hero{display:flex;gap:40px;align-items:center;justify-content:space-between;padding:60px 6vw}
+    .hero-left{max-width:720px}
+    .eyebrow{color:var(--accent);font-weight:700;letter-spacing:1px;margin-bottom:14px}
+    h1{font-size:44px;margin:0;line-height:1.02;letter-spacing:-1px}
+    p.lead{color:var(--muted);font-size:16px;margin-top:18px;max-width:60ch}
+    .cta{display:inline-block;margin-top:22px;padding:12px 20px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#041018;font-weight:700;text-decoration:none}
+
+    .hero-right{width:440px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:14px;padding:18px;border:1px solid rgba(255,255,255,0.03)}
+    .kpi{display:flex;gap:12px;align-items:center}
+    .kpi .num{font-size:22px;font-weight:800;color:#fff}
+    .kpi small{color:var(--muted)}
+
+    section.projects-section{padding:40px 6vw}
+    .section-title{color:var(--muted);text-transform:uppercase;font-weight:700;letter-spacing:1.6px;margin-bottom:18px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+
+    .card{background:var(--card);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.03);transition:transform .35s ease, box-shadow .35s ease}
+    .card:hover{transform:translateY(-10px);box-shadow:0 20px 40px rgba(0,0,0,0.6)}
+    .card .thumb{height:160px;border-radius:8px;background:linear-gradient(90deg, rgba(0,230,255,0.06), rgba(124,92,255,0.06));display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:700}
+    .card h3{margin:12px 0 8px}
+    .card p{color:var(--muted);font-size:14px;margin-bottom:12px}
+    .card .links{display:flex;gap:10px}
+    .pill{display:inline-block;padding:8px 10px;border-radius:999px;background:rgba(255,255,255,0.02);color:var(--muted);font-weight:600;font-size:13px}
+    .btn{padding:10px 14px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.05);color:var(--accent);text-decoration:none;font-weight:700}
+
+    footer{padding:30px 6vw;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+    .social a{color:var(--muted);margin-left:16px;text-decoration:none}
+
+    /* small screens */
+    @media (max-width:800px){
+      .hero{flex-direction:column;padding:40px 4vw}
+      .hero-right{width:100%}
+      header{padding:0 16px}
+    }
+
+    /* subtle animated bg */
+    .bg-blob{position:fixed;right:-120px;top:-120px;width:420px;height:420px;background:radial-gradient(circle at 30% 30%, rgba(0,230,255,0.07), transparent 20%), radial-gradient(circle at 70% 70%, rgba(124,92,255,0.06), transparent 20%);filter:blur(40px);z-index:0}
+  </style>
+</head>
+<body>
+  <div class="bg-blob" aria-hidden></div>
+  <header>
+    <div class="brand">
+      <div class="logo">AS</div>
+      <div>
+        <div class="name">ABDULMUIZ SHITTU</div>
+        <div style="font-size:12px;color:var(--muted)">Data Analyst • Python Developer</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-left">
+        <div class="eyebrow">Portfolio</div>
+        <h1>Build. Analyze. Ship. <span style="color:var(--accent)">Impactful data projects</span></h1>
+        <p class="lead">I turn messy data into clear, production-ready insights and deployable apps. Below are hand-picked projects that show SQL mastery, Python engineering, forecasting, dashboards, and deployable ML.</p>
+        <a class="cta" href="#projects">Explore Projects</a>
+      </div>
+      <aside class="hero-right">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+          <div>
+            <div class="kpi"><div class="num">9+</div><small>Portfolio Projects</small></div>
+            <div style="color:var(--muted);font-size:13px;margin-top:6px">Focused on Python, Dashboards & ML</div>
+          </div>
+          <div style="text-align:right">
+            <div class="kpi"><div class="num">2k+</div><small>Github Stars & Forks</small></div>
+            <div style="color:var(--muted);font-size:13px;margin-top:6px">Active on GitHub</div>
+          </div>
+        </div>
+        <div style="border-top:1px solid rgba(255,255,255,0.02);padding-top:12px">
+          <div style="display:flex;gap:12px;align-items:center">
+            <div style="width:36px;height:36px;border-radius:8px;background:linear-gradient(90deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:#041018;font-weight:800">Py</div>
+            <div>
+              <div style="font-weight:700">Python • Streamlit • Pandas</div>
+              <div style="color:var(--muted);font-size:13px">Deploy-ready dashboards & ML apps</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="projects" class="projects-section">
+      <div class="section-title">Featured Projects</div>
+      <div class="grid">
+
+        <!-- Zara Python Data Analysis -->
+        <div class="card">
+          <div class="thumb">ZARA</div>
+          <h3>Zara — Python Data Analysis</h3>
+          <p>Full exploratory analysis of Zara product data using Python. Includes cleaning, sales & price distribution, promotional impact analysis, and visuals ready to showcase on GitHub and Streamlit.</p>
+          <div class="links">
+            <a class="btn" href="https://github.com/muizcal/zara-python-data-analysis" target="_blank">View Repo</a>
+            <span class="pill">pandas • matplotlib • seaborn • excel</span>
+          </div>
+        </div>
+
+        <!-- Churn Dashboard -->
+        <div class="card">
+          <div class="thumb">CHURN</div>
+          <h3>Customer Churn Dashboard</h3>
+          <p>Interactive Streamlit dashboard for telecom churn analysis. Includes feature engineering, Random Forest model, evaluation metrics, confusion matrices and downloadable predictions.</p>
+          <div class="links">
+            <a class="btn" href="https://github.com/muizcal/churn-dashboard" target="_blank">View Repo</a>
+            <span class="pill">streamlit • sklearn • shap • pandas</span>
+          </div>
+        </div>
+
+        <!-- Sales Forecast -->
+        <div class="card">
+          <div class="thumb">FORECAST</div>
+          <h3>Sales Forecast Dashboard</h3>
+          <p>Time-series forecasting project using Prophet. Aggregates weekly sales, visualizes trends, and provides 12-week forecasts with uncertainty bands — deployed on Streamlit.</p>
+          <div class="links">
+            <a class="btn" href="https://github.com/muizcal/sales-forecast-dashboard" target="_blank">View Repo</a>
+            <span class="pill">prophet • plotly • pandas • streamlit</span>
+          </div>
+        </div>
+
+        <!-- Credit Card Fraud -->
+        <div class="card">
+          <div class="thumb">FRAUD</div>
+          <h3>Credit Card Fraud Dashboard</h3>
+          <p>Fraud detection project analyzing transaction data with Random Forest and Logistic Regression. Includes EDA, correlation heatmap, feature importance, confusion matrices and downloadable predictions.</p>
+          <div class="links">
+            <a class="btn" href="https://github.com/muizcal/creditcard-fraud-dashboard" target="_blank">View Repo</a>
+            <span class="pill">scikit-learn • pandas • streamlit • plotly</span>
+          </div>
+        </div>
+
+        <!-- Previous SQL Project -->
+        <div class="card">
+          <div class="thumb">SQL</div>
+          <h3>Data Cleaning using SQL — Nashville Project</h3>
+          <p>SQL-based data cleaning and ETL for the Nashville dataset — improved data quality and prepared the set for deeper analysis.</p>
+          <div class="links">
+            <a class="btn" href="https://github.com/muizcal/NASHVILLE/blob/main/NASHVILLE%20%20PROJECT.sql" target="_blank">View Repo</a>
+            <span class="pill">SQL • ETL • data-cleaning</span>
+          </div>
+        </div>
+
+        <!-- Tumor SQL -->
+        <div class="card">
+          <div class="thumb">MED</div>
+          <h3>Brain Tumor Exploration (SQL)</h3>
+          <p>Exploratory data analysis and cleaning on a brain tumor dataset focused on preparing data for research and visualization in Tableau.</p>
+          <div class="links">
+            <a class="btn" href="https://github.com/muizcal/TUMOR-DATA-ANALYSIS-DATASET/blob/main/ANALYSIS%20OF%20BRAIN%20TUMOR%20DATASET.sql" target="_blank">View Repo</a>
+            <span class="pill">SQL • EDA • data-prep</span>
+          </div>
+        </div>
+
+        <!-- Tableau -->
+        <div class="card">
+          <div class="thumb">TABLEAU</div>
+          <h3>Brain Tumor Visualization (Tableau)</h3>
+          <p>Interactive Tableau dashboard visualizing tumor types, demographics and trends — designed to highlight actionable clinical insights.</p>
+          <div class="links">
+            <a class="btn" href="https://public.tableau.com/app/profile/abdulmuiz.shittu/viz/braintumor_17254724674730/Dashboard22" target="_blank">View Dashboard</a>
+            <span class="pill">tableau • dashboards • viz</span>
+          </div>
+        </div>
+
+        <!-- Excel -->
+        <div class="card">
+          <div class="thumb">EXCEL</div>
+          <h3>Diamond Insights Dashboard (Excel)</h3>
+          <p>Excel-based analytics showing diamond attribute comparisons with dynamic charts and slicers for quick analysis.</p>
+          <div class="links">
+            <a class="btn" href="https://github.com/muizcal/Diamond-Insights-Dashboard" target="_blank">View Repo</a>
+            <span class="pill">excel • data-viz</span>
+          </div>
+        </div>
+
+        <!-- Power BI -->
+        <div class="card">
+          <div class="thumb">PBI</div>
+          <h3>Employee Attrition Analysis (Power BI)</h3>
+          <p>Power BI dashboard to examine employee churn with interactive visuals and KPI-driven insights for HR decision-makers.</p>
+          <div class="links">
+            <a class="btn" href="https://github.com/muizcal/Attrition-Analysis-Using-Power-BI" target="_blank">View Repo</a>
+            <span class="pill">power-bi • dashboards</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="about" style="padding:40px 6vw;">
+      <div style="display:flex;gap:30px;align-items:center;flex-wrap:wrap">
+        <div style="flex:1;min-width:280px">
+          <h2 style="margin-bottom:8px">About Me</h2>
+          <p style="color:var(--muted);max-width:70ch">I'm Abdulmuiz Shittu — a data analyst and Python developer focused on shipping reliable analytics and machine-learning projects. I build clean data pipelines, production-ready dashboards, and interpretable ML models. I write readable code, document every step, and deploy projects so hiring managers can interact with them.</p>
+          <p style="margin-top:12px;color:var(--muted)"><strong>Skills:</strong> Python, Pandas, SQL, Streamlit, Scikit-learn, Prophet, Tableau, Power BI, Excel.</p>
+          <p style="margin-top:12px;color:var(--muted)"><strong>Want to work together?</strong> Email: <a href="mailto:shittuabdulmuiz16@gmail.com">shittuabdulmuiz16@gmail.com</a></p>
+        </div>
+        <div style="width:220px;text-align:center">
+          <div style="width:160px;height:160px;border-radius:18px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:inline-flex;align-items:center;justify-content:center;font-weight:800;color:#041018;font-size:24px">AS</div>
+          <div style="margin-top:12px;color:var(--muted)">Lagos, Nigeria</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" style="padding:30px 6vw 80px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px">
+        <div>
+          <h3>Get in touch</h3>
+          <p style="color:var(--muted)">Interested in working together? I’m open to remote roles and freelance projects.</p>
+        </div>
+        <div style="display:flex;gap:12px;align-items:center">
+          <a class="btn" href="mailto:shittuabdulmuiz16@gmail.com">Email Me</a>
+          <a class="btn" href="https://github.com/muizcal" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div>© <span id="yr"></span> Abdulmuiz Shittu</div>
+    <div class="social"><a href="https://www.linkedin.com/in/abdulmuiz-shittu-0b79a324a/">LinkedIn</a><a href="https://github.com/muizcal">GitHub</a></div>
+  </footer>
+
+  <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
